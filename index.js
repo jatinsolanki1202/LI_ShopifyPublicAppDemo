@@ -13,4 +13,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/auth', authRoutes)
 app.use('/webhook', webhookRoutes)
 
+app.get('/', (req, res) => {
+  res.send("working")
+})
+
 app.listen(process.env.PORT, () => console.log(`server running on port ${process.env.PORT}`))
