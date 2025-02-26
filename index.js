@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/auth', authRoutes)
 app.use('/webhook', webhookRoutes)
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 

@@ -55,7 +55,7 @@ const callback = async (req, res) => {
     }
 
     await registerAppUninstalledWebhook(shop, accessToken)
-    return res.status(200).json({ success: true, message: "App installed successfully", status: 200 })
+    return res.status(200).redirect('/')
   } catch (error) {
     res.json({ success: false, message: error.message, status: 500 })
   }
