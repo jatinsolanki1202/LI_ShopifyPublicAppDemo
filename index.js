@@ -3,9 +3,12 @@ require('dotenv').config()
 const dbConnection = require('./config/db.js')
 const authRoutes = require('./routes/auth.routes.js')
 const webhookRoutes = require('./routes/webhook.routes.js')
+const path = require('path')
 
 const app = express()
 dbConnection()
+
+app.use(express.static(path.join(__dirname, "dist")));
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
